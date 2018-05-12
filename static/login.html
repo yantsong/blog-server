@@ -1068,9 +1068,11 @@
                                     pass: md5(pwd)
                                 },
                                 success: function(data) {
+                                    let _url = window.location.hostname
                                     if (data.err == 200) {
                                         localStorage.setItem('lid', data.token);
-                                        window.location.href = 'http://localhost:3080/admin/articleEdit';
+
+                                        window.location.href = `${_url}/admin/articleEdit`;
                                     } else {
                                         alert('账号或密码错误');
                                         updateverifyCanvas();
